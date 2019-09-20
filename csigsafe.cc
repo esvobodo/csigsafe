@@ -862,7 +862,7 @@ void css_function::process_gimple_call(css_bb &status,gimple * stmt, bool &all_o
 	if (!called_function_name)
 		return;
 	int8_t return_number = RC_ASYNCH_SAFE;
-	if (DECL_INITIAL  (fn_decl))
+	if (DECL_INITIAL  (fn_decl) && !DECL_EXTERNAL(fn_decl))
 	{
 		// in case of recurse, do nothing
 		if (strcmp(get_name(this->get_fnc_decl()),called_function_name)==0)
