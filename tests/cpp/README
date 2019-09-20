@@ -1,0 +1,13 @@
+Tests in this directory are supposed to discover what features of c++ language 
+csigsafe isn't able to check properly.
+
+Problems discovered:
+    - csigsafe couldn't distinguish c++ library and user-defined functions properly (fixed)
+    - namespaces and function overloads cause wrong functions to be controled because csigsafe
+        checks them only on basis of their name
+    - properly checks only code inside one file 
+        (code divided in multiple files won't be checked properly)
+
+Exploanatory notes - file name starting with:
+    *_name ... discovered bugs
+    _name .... ok (no bug found)
